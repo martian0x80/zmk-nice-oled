@@ -50,6 +50,23 @@ const lv_img_dsc_t *head_imgs[] = {&head_00, &head_01, &head_02, &head_03, &head
                                    &head_06, &head_07, &head_08, &head_09, &head_10, &head_11,
                                    &head_12, &head_13, &head_14, &head_15};
 
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_BONGO_CAT)
+LV_IMG_DECLARE(bongo_cat_double_tap1_01);
+LV_IMG_DECLARE(bongo_cat_double_tap1_02);
+LV_IMG_DECLARE(bongo_cat_double_tap1_03);
+LV_IMG_DECLARE(bongo_cat_double_tap1_04);
+LV_IMG_DECLARE(bongo_cat_double_tap1_05);
+LV_IMG_DECLARE(bongo_cat_double_tap1_06);
+
+const lv_img_dsc_t *bongo_cat_imgs[] = {
+    &bongo_cat_double_tap1_01,
+    &bongo_cat_double_tap1_02,
+    &bongo_cat_double_tap1_03,
+    &bongo_cat_double_tap1_04,
+    &bongo_cat_double_tap1_05,
+    &bongo_cat_double_tap1_06,
+};
+
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
 LV_IMG_DECLARE(cat_0);
 LV_IMG_DECLARE(cat_1);
@@ -180,6 +197,8 @@ void draw_animation(lv_obj_t *canvas, struct zmk_widget_screen *widget) {
 
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_HEAD)
     lv_animimg_set_src(art, (const void **)head_imgs, 16);
+#elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_BONGO_CAT)
+    lv_animimg_set_src(art, (const void **)bongo_cat_imgs, 6);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_CAT)
     lv_animimg_set_src(art, (const void **)cat_imgs, 8);
 #elif IS_ENABLED(CONFIG_NICE_OLED_WIDGET_ANIMATION_PERIPHERAL_SPACEMAN)
