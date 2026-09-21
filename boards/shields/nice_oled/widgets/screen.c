@@ -875,7 +875,9 @@ static void draw_canvas(lv_obj_t *widget, const struct status_state *state) {
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM)
     draw_wpm_status(canvas, state);
 #endif // IS_ENABLED(CONFIG_NICE_OLED_WIDGET_WPM)
+#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_PROFILE)
     draw_profile_status(canvas, state);
+#endif
 #if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_LAYER)
     draw_layer_status(canvas, state);
 #endif

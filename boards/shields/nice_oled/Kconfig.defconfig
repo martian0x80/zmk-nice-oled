@@ -501,6 +501,10 @@ config NICE_OLED_WIDGET_LAYER
     default y
 # }}}
 ### NICE OLED WIDGET PROFILE {{{
+config NICE_OLED_WIDGET_PROFILE
+    bool "Enable profile widget"
+    default y
+
 config NICE_OLED_WIDGET_PROFILE_BIG
     bool "Enable show widget profile bigger"
     default y if NICE_EPAPER_ON
