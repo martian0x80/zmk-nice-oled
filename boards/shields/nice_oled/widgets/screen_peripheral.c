@@ -48,8 +48,10 @@ static void draw_canvas(lv_obj_t *widget, const struct status_state *state) {
 
     // Draw widgets
     draw_background(canvas);
+#if IS_ENABLED(CONFIG_NICE_OLED_WIDGET_PERIPHERAL_STATUS)
     draw_output_status(canvas, state);
     draw_battery_status(canvas, state);
+#endif
 
     // Rotate for horizontal display
     rotate_canvas(canvas);

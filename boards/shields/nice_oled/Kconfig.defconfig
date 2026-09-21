@@ -76,6 +76,11 @@ config NICE_OLED_WIDGET_STATUS
     select LV_USE_ANIMIMG
     select LV_USE_ANIMATION
 
+config NICE_OLED_WIDGET_PERIPHERAL_STATUS
+    bool "Show connection and battery on the peripheral"
+    default n if NICE_OLED_WIDGET_ANIMATION_PERIPHERAL || NICE_OLED_WIDGET_STATIC_IMAGE_PERIPHERAL
+    default y
+
 config NICE_OLED_WIDGET_INVERTED
     bool "Invert display colors"
 
